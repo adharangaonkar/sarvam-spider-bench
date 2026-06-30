@@ -1,0 +1,9 @@
+aiohttp
+matplotlib
+nltk
+numpy
+requests
+sqlparse
+
+# Optional: only needed for debug_scripts/* lm-evaluation-harness probes.
+# lm-eval

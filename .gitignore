@@ -4,9 +4,8 @@ yale-universitys-spider-10-nlp-dataset/
 # Cloned official evaluator (re-clone if missing; has its own .git)
 test-suite-sql-eval/
 
-# Run outputs (regenerable via generate*/reparse*/make_plots.py)
+# Run outputs (regenerable via generate*/reparse*)
 predictions/
-plots/
 logs/
 
 # Python
@@ -16,6 +15,7 @@ __pycache__/
 
 # Local agent instructions
 CLAUDE.md
+.codex/
 
 # Stray process/run artifacts
 *.pid

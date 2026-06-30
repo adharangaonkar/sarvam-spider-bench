@@ -23,6 +23,38 @@ Key observations:
 
 > These are single-task results (Spider, Q4_K_M, the prompt in this repo). They are an efficiency finding, not a general capability claim.
 
+## Visual Results
+
+### Execution accuracy by difficulty
+
+![Spider execution accuracy by query difficulty](plots/execution_by_difficulty.png)
+
+Qwen is stronger overall, especially on easy and medium examples. On hard and extra-hard examples, the gap closes and Sarvam slightly edges Qwen, suggesting the MoE reasoning behavior helps more when the SQL structure is genuinely complex.
+
+### Execution accuracy vs exact match
+
+![Execution accuracy versus exact-match accuracy](plots/exec_vs_exactmatch.png)
+
+Both models score much higher by execution accuracy than by exact-set match. This is why the benchmark emphasizes execution: semantically equivalent SQL can look structurally different while returning the same result.
+
+### Accuracy per active parameter
+
+![Accuracy versus active parameters](plots/accuracy_per_active_param.png)
+
+This is the main efficiency claim. Sarvam reaches a large fraction of Qwen's execution accuracy while using far fewer active parameters per token, producing much higher accuracy per active billion parameters.
+
+### No-SQL / placeholder rates
+
+![No-SQL / placeholder rates](plots/placeholder_rates.png)
+
+This captures generation failures where no usable SQL was extracted and the placeholder `SELECT` was written to preserve alignment. Sarvam's higher rate comes from reasoning overflow, especially on simpler questions where it sometimes spends too much budget before emitting SQL.
+
+### Overall execution accuracy
+
+![Overall execution accuracy](plots/overall_headline.png)
+
+The headline comparison: Qwen2.5-14B wins on overall Spider dev execution accuracy, while Sarvam-30B remains close enough to make the active-parameter efficiency comparison interesting.
+
 ## Repository layout
 
 ```

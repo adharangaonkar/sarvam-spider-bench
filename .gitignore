@@ -1,0 +1,22 @@
+# Spider dataset (large, fetched separately)
+yale-universitys-spider-10-nlp-dataset/
+
+# Cloned official evaluator (re-clone if missing; has its own .git)
+test-suite-sql-eval/
+
+# Run outputs (regenerable via generate*/reparse*/make_plots.py)
+predictions/
+plots/
+logs/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Local agent instructions
+CLAUDE.md
+
+# Stray process/run artifacts
+*.pid
+*.log
